@@ -12,6 +12,7 @@
             })
             .state('timeclock',{
                 url: '/timeclock',
+                controller: 'TimeClock as timeclock',
                 templateUrl: '/templates/timeclock.html'
             });
     }
