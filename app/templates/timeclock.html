@@ -1,7 +1,6 @@
 <div class="countdown">
     <h1 class="title">{{timeclock.title}}</h1>
     <h2 class="timeleft">{{timeclock.workTime | timecode}}</h2>
-    <button class="controlbutton" ng-click="timeclock.countDown()"> Start </button>
-    <button class="controlbutton" ng-click="timeclock.resetWorkCount()"> New Work Session </button>
-    <button class="controlbutton" ng-click="timeclock.takeabreak()">Break?</button>
+    <button class="controlbutton" ng-show=timeclock.showButton ng-click="timeclock.finalCountDown()">{{timeclock.buttonTitle}}</button>
+    <button class="controlbutton" ng-show="timeclock.onBreak && timeclock.showButton" ng-click="timeclock.resetWorkCount()">Back to work?</button>
 </div>
