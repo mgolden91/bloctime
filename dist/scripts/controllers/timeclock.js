@@ -7,6 +7,7 @@
         vm.workTime = 05;
         vm.breakTime = 10;
         vm.showButton = true;
+        vm.longBreakCounter = 0;
         var countDown;
         
         
@@ -40,7 +41,21 @@
             vm.title = "Work Time Left ";
             vm.workTime = 05;
             vm.onBreak = false;
+            if (vm.longBreakCounter < 4 ){
+                vm.longBreakCounter += 1;
+            } else if (vm.longBreakCounter >= 4){
+                vm.longBreakCounter = 1;
+            }
             vm.countDown();
+        };
+        
+        vm.longBreak = function(){
+            vm.title = "Long Break";
+            vm.workTime = 15;
+            vm.onBreak = true;
+            vm.longBreakCounter = 0;
+            vm.countDown();
+            
         };
         
         vm.finalCountDown = function(){
@@ -48,7 +63,9 @@
               vm.resetWorkCount();      
           } else if (vm.onBreak == true){
               vm.takeabreak();
-          }  
+          } else if (vm.onBreak == true && vm.longBreakCounter == 4){
+              vm.longBreak();
+          } 
         };
         
     }

@@ -3,4 +3,5 @@
     <h2 class="timeleft">{{timeclock.workTime | timecode}}</h2>
     <button class="controlbutton" ng-show=timeclock.showButton ng-click="timeclock.finalCountDown()">{{timeclock.buttonTitle}}</button>
     <button class="controlbutton" ng-show="timeclock.onBreak && timeclock.showButton" ng-click="timeclock.resetWorkCount()">Back to work?</button>
+    <button class="controlbutton" ng-show="timeclock.onBreak && timeclock.showButton && (timeclock.longBreakCounter == 4)" ng-click="timeclock.longBreak()">Long Break</button>
 </div>
