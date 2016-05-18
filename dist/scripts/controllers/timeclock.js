@@ -8,6 +8,9 @@
         vm.breakTime = 10;
         vm.showButton = true;
         vm.longBreakCounter = 0;
+        vm.sectionCompleteSound = new buzz.sound("/../assets/sounds/complete.mp3",{
+            preload: true
+        });
         var countDown;
         
         
@@ -18,6 +21,7 @@
                     vm.workTime -= 1;
                 } else {
                     $interval.cancel(countDown);
+                    vm.sectionCompleteSound.play();
                     vm.onBreak = !vm.onBreak;
                     vm.showButton = true;
                     if (vm.onBreak == true){
@@ -27,7 +31,7 @@
                     }
                 }
             }, 1000);
-        }
+        };
 
         vm.takeabreak = function(){
             vm.title = "Break Time Left";
