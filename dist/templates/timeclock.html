@@ -1,3 +1,19 @@
+<section class="taskhistory">
+    <div class="taskheader">
+        <h1>Task History</h1>
+        <input type="text" class="inputbox" ng-model="addItem" id="textbox">
+        <button class="taskbutton" ng-click="timeclock.sendData(addItem)">Submit</button>
+    </div>
+    <div class="tasklist">
+        <ul class="unorderlist">
+            <li ng-repeat="listitem in timeclock.fireArray" class="listy">{{listitem.$value}}    
+                <button ng-click="timeclock.discardData(listitem)" class="removebutton">Remove</button>
+            </li>
+        </ul>
+        
+    </div>  
+</section>
+
 <div class="countdown">
     <h1 class="title">{{timeclock.title}}</h1>
     <h2 class="timeleft">{{timeclock.workTime | timecode}}</h2>

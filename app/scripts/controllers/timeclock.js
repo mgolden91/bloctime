@@ -1,6 +1,7 @@
 (function(){
-    function TimeClock($interval){
+    function TimeClock($interval, Tasks){
         var vm = this;
+        vm.fireArray = Tasks.all;
         vm.onBreak = false;
         vm.title = "Time Left";
         vm.buttonTitle = "Work!!!";
@@ -13,6 +14,8 @@
         });
         var countDown;
         
+        vm.sendData = Tasks.sendingData;
+        vm.discardData = Tasks.discardingData;
         
         vm.countDown = function() {
             vm.showButton = false;
@@ -76,5 +79,5 @@
     
     angular
         .module('blocTime')
-        .controller('TimeClock', ['$interval', TimeClock]);
+        .controller('TimeClock', ['$interval', 'Tasks', TimeClock]);
 })();

@@ -16,14 +16,28 @@
     <ui-view></ui-view>
     
     
+    <!--
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBBVgrsQG7k1bugq1PwyPG3CQFCO95tQBQ",
+        authDomain: "bloctime-cc132.firebaseapp.com",
+        databaseURL: "https://bloctime-cc132.firebaseio.com",
+        storageBucket: "bloctime-cc132.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
+    -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
-    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
     <script src="/scripts/app.js"></script>
     <script src="/scripts/controllers/TimeClock.js"></script>
     <script src="/scripts/filters/timecode.js"></script>
+    <script src="/scripts/factory/firebasefactory.js"></script>
     
 </body>
 </html>
