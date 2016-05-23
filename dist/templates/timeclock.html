@@ -6,7 +6,7 @@
     </div>
     <div class="tasklist">
         <ul class="unorderlist">
-            <li ng-repeat="listitem in timeclock.fireArray" class="listy">{{listitem.$value}}    
+            <li ng-repeat="listitem in timeclock.fireArray | orderBy: index: true" class="listy">{{listitem.$value}}    
                 <button ng-click="timeclock.discardData(listitem)" class="removebutton">Remove</button>
             </li>
         </ul>
